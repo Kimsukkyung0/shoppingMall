@@ -111,9 +111,9 @@ public class ProductService {
 
     ProductDetailRes getProductDetail(ProductEntity entity){
         List<String> list = mapper.getProductPics(entity);
-        ProductDetailVo vo = mapper.getProductDetail(entity);
+        ProductDetailVo data = mapper.getProductDetail(entity);
         return ProductDetailRes.builder()
-                .vo(vo)
+                .data(data)
                 .pics(list)
                 .build();
     }

@@ -9,4 +9,17 @@
         , icustomer=#{icustomer}
         , quantity=#{quantity}
     </insert>
+
+    <select id="getBuyRecords">
+        select A.ibuy, A.iproduct, C.nm cName, A.icustomer
+        , B.nm pName, A.quantity, A.buy_at buyAt
+        , B.price, B.main_pic mainPic
+        from t_buy A
+        INNER JOIN t_product B
+        ON A.iproduct = B.iproduct
+        INNER JOIN t_customer C
+        ON A.icustomer = C.icustomer
+        WHERE A.icustomer = #{icustomer}
+        ORDER BY A.buy_at
+    </select>
 </mapper>

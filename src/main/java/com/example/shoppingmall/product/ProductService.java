@@ -83,7 +83,7 @@ public class ProductService {
 
 
             //path, 디렉토리명 만들기
-            String dirPath = String.format("%s/product/%s/pics",filedir,iproduct);
+            String dirPath = String.format("%s//%s/pics",filedir,iproduct);
 
 
             File file = new File(dirPath);
